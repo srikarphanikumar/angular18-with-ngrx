@@ -1,9 +1,18 @@
+<!-- Container for the contact detail card, with a top margin for spacing -->
+<!-- The *ngIf directive checks if the contact observable has emitted a value -->
 <div class="container mt-5" *ngIf="(contact$ | async) as contact">
+  <!-- Main heading for the contact detail section -->
   <h1>Contact Detail</h1>
+  <!-- Bootstrap card component to display contact details -->
   <div class="card">
+    <!-- Image for the contact's avatar, using a placeholder image service -->
+    <!-- The src attribute dynamically sets the URL based on the contact's ID -->
     <img [src]="'https://i.pravatar.cc/150?img=' + contact.id" class="card-img-top" alt="{{ contact.name }}">
+    <!-- Card body containing the contact's name and email -->
     <div class="card-body">
+      <!-- Card title displaying the contact's name -->
       <h5 class="card-title">{{ contact.name }}</h5>
+      <!-- Card text displaying the contact's email address -->
       <p class="card-text">{{ contact.email }}</p>
     </div>
   </div>

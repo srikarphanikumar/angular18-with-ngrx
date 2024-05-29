@@ -1,17 +1,28 @@
+<!-- Navbar component using Bootstrap classes for styling -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <!-- Brand name or logo -->
   <a class="navbar-brand" href="#">My App</a>
+  <!-- Collapsible part of the navbar -->
   <div class="collapse navbar-collapse">
+    <!-- Navbar items container -->
     <ul class="navbar-nav mr-auto">
+      <!-- Individual navbar item -->
       <li class="nav-item">
+        <!-- Link to the Home page using Angular routerLink directive -->
         <a class="nav-link" routerLink="/">Home</a>
       </li>
+      <!-- Individual navbar item -->
       <li class="nav-item">
+        <!-- Link to the About page using Angular routerLink directive -->
         <a class="nav-link" routerLink="/about">About</a>
       </li>
+      <!-- Individual navbar item -->
       <li class="nav-item">
+        <!-- Link to the Contact page using Angular routerLink directive -->
         <a class="nav-link" routerLink="/contact">Contact</a>
       </li>
     </ul>
   </div>
 </nav>
+<!-- Angular directive that marks the location where the router displays the components for the activated route -->
 <router-outlet></router-outlet>

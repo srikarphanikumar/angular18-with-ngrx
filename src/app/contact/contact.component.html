@@ -1,19 +1,33 @@
+<!-- Container for the contact list table, with a top margin for spacing -->
 <div class="container mt-5">
+  <!-- Main heading for the contact list -->
   <h1>Contact List</h1>
+  <!-- Bootstrap table with striped rows for better readability -->
   <table class="table table-striped">
+    <!-- Table header defining the columns -->
     <thead>
       <tr>
+        <!-- Column for the serial number -->
         <th>#</th>
+        <!-- Column for the avatar image -->
         <th>Avatar</th>
+        <!-- Column for the contact name -->
         <th>Name</th>
+        <!-- Column for the contact email -->
         <th>Email</th>
       </tr>
     </thead>
+    <!-- Table body containing the rows for each contact -->
     <tbody>
+      <!-- Angular directive to loop through the contacts array asynchronously and display each contact -->
       <tr *ngFor="let contact of contacts$ | async; let i = index">
+        <!-- Serial number of the contact, starting from 1 -->
         <td>{{ i + 1 }}</td>
+        <!-- Avatar image of the contact, using a placeholder image service -->
         <td><img [src]="'https://i.pravatar.cc/150?img=' + (i + 1)" alt="{{ contact.name }}" width="50" height="50"></td>
+        <!-- Name of the contact, with a link to the contact detail page using Angular routerLink -->
         <td><a [routerLink]="['/contact', contact.id]">{{ contact.name }}</a></td>
+        <!-- Email address of the contact -->
         <td>{{ contact.email }}</td>
       </tr>
     </tbody>
