@@ -1,0 +1,21 @@
+<div class="container mt-5">
+  <h1>Contact List</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Avatar</th>
+        <th>Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contacts$ | async; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td><img [src]="'https://i.pravatar.cc/150?img=' + (i + 1)" alt="{{ contact.name }}" width="50" height="50"></td>
+        <td><a [routerLink]="['/contact', contact.id]">{{ contact.name }}</a></td>
+        <td>{{ contact.email }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
